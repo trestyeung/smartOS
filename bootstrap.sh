@@ -3,7 +3,7 @@ sudo pkgin up
 #install git
 sudo pkgin -y in scmgit-1.7.10.5
 #install gcc
-sudo pkgin -y in gcc47-runtime-4.7.0nb2 gcc47-4.7.0nb2
+sudo pkgin -y in gcc47-runtime-4.7.0nb2 gcc47-4.7.0nb2 gmake
 #install postgresql
 # sudo pkgin -y in postgresql91-server-9.1.4
 # #install redis
