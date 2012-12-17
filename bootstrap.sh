@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
-sudo pkgin up
+pkgin up
 #install git
-sudo pkgin -y in scmgit-1.7.10.5
+pkgin -y in scmgit-1.7.10.5
 #install gcc
-sudo pkgin -y in gcc47-runtime-4.7.0nb2 gcc47-4.7.0nb2 gmake
+pkgin -y in gcc47-runtime-4.7.0nb2 gcc47-4.7.0nb2 gmake
 #install postgresql
-# sudo pkgin -y in postgresql91-server-9.1.4
+# pkgin -y in postgresql91-server-9.1.4
 # #install redis
-# sudo pkgin -y in redis-2.4.14
+# pkgin -y in redis-2.4.14
 # #install imagemagick
-# sudo pkgin -y in ImageMagick-6.7.6.6nb3
+# pkgin -y in ImageMagick-6.7.6.6nb3
 # #install ruby
-sudo pkgin -y in ruby193 ruby193-bundler
+pkgin -y in ruby193 ruby193-bundler
 # install chef
 
 # #nokogiri dependency
-# sudo pkgin -y in libxslt-1.1.26nb3
+# pkgin -y in libxslt-1.1.26nb3
 
 
 gem install chef ruby-shadow --no-ri --no-rdoc
+
+# add user newlix
+useradd -m -s /usr/bin/bash newlix
+
+# add newlix to sudoer
+echo "root ALL=(ALL) SETENV: ALL" >  /etc/sudoers 
+
