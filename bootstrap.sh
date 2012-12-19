@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
-pkgin up
+cd /
+curl -k http://pkgsrc.joyent.com/sdc6/2012Q2/x86_64/bootstrap.tar.gz | gzcat | tar -xf -
+pkg_admin rebuild
+pkgin -y up
+
+#install sudo
+pkgin -y in sudo
 #install git
 pkgin -y in scmgit-1.7.10.5
 #install gcc
 pkgin -y in gcc47-runtime-4.7.0nb2 gcc47-4.7.0nb2 gmake
+
 #install postgresql
 # pkgin -y in postgresql91-server-9.1.4
 # #install redis
@@ -15,14 +22,13 @@ pkgin -y in ruby193 ruby193-bundler
 # install chef
 
 # #nokogiri dependency
-# pkgin -y in libxslt-1.1.26nb3
+pkgin -y in libxslt-1.1.26nb3
 
 
-gem install chef ruby-shadow --no-ri --no-rdoc
 
 # add user newlix
 useradd -m -s /usr/bin/bash newlix
 
 # add newlix to sudoer
-echo "root ALL=(ALL) SETENV: ALL" >  /etc/sudoers 
+echo "newlix ALL=(ALL) SETENV: ALL" >>  /opt/local/etc/sudoers 
 
