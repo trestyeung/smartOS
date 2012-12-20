@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-cd /
-curl -k http://pkgsrc.joyent.com/sdc6/2012Q2/x86_64/bootstrap.tar.gz | gzcat | tar -xf -
-pkg_admin rebuild
 pkgin -y up
 
 #install sudo
