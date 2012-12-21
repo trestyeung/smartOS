@@ -4,9 +4,9 @@ pkgin -y up
 #install sudo
 pkgin -y in sudo
 #install git
-pkgin -y in scmgit-1.7.10.5
+pkgin -y in scmgit
 #install gcc
-pkgin -y in gcc47-runtime-4.7.0nb2 gcc47-4.7.0nb2 gmake
+pkgin -y in gcc47 gmake
 
 #install postgresql
 # pkgin -y in postgresql91-server-9.1.4
@@ -19,7 +19,7 @@ pkgin -y in ruby193 ruby193-bundler
 # install chef
 
 # #nokogiri dependency
-pkgin -y in libxslt-1.1.26nb3
+pkgin -y in libxslt
 
 
 
