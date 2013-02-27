@@ -15,7 +15,7 @@ pkgin -y in gcc47 gmake
 # #install imagemagick
 # pkgin -y in ImageMagick-6.7.6.6nb3
 # #install ruby
-# pkgin -y in ruby193 ruby193-bundler
+pkgin -y in ruby193 ruby193-bundler
 # install chef
 
 # #nokogiri dependency
