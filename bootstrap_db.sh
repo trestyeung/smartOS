@@ -19,13 +19,20 @@ pkgin -y in gcc47 gmake
 # install chef
 
 # #nokogiri dependency
-pkgin -y in libxslt
+# pkgin -y in libxslt
 
 
 
 # add user newlix
-useradd -m -s /usr/bin/bash newlix
+if ! grep "^newlix:" /etc/passwd; then
+    # Create the user account
+    useradd -m -s /usr/bin/bash newlix
+    echo "newlix ALL=(ALL) SETENV: ALL" >>  /opt/local/etc/sudoers 
+fi
 
 # add newlix to sudoer
-echo "newlix ALL=(ALL) SETENV: ALL" >>  /opt/local/etc/sudoers 
-
+# svcadm disable mysql
+# mysqld_safe --skip-grant-tables &
+# mysql -u root -e "use mysql;update user set password= where User='root';flush privileges;"
+# svcadm disable mysql
+# svcadm enble mysql
