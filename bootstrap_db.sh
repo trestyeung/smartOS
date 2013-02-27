@@ -20,7 +20,7 @@ pkgin -y in ruby193 ruby193-bundler
 
 # #nokogiri dependency
 # pkgin -y in libxslt
-
+pkgin -y in mysql-client
 
 
 # add user newlix
