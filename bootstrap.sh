@@ -21,12 +21,8 @@ pkgin -y in ruby193 ruby193-bundler
 # #nokogiri dependency
 pkgin -y in libxslt
 
-# install rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' > ~/.bashrc
-echo 'eval "$(rbenv init -)"' > ~/.bashrc
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#install mysql-client
+pkgin -y in mysql-client
 
 
 # add user newlix
